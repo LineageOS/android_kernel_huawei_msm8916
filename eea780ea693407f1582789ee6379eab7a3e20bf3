@@ -1,0 +1,119 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "fa3479d7_5b0a8fd3",
+        "filename": "arch/arm/configs/cyanogenmod_cherry_defconfig",
+        "patchSetId": 2
+      },
+      "lineNbr": 289,
+      "author": {
+        "id": 10258
+      },
+      "writtenOn": "2017-01-03T07:22:05Z",
+      "side": 0,
+      "message": "not sure about this",
+      "range": {
+        "startLine": 289,
+        "startChar": 0,
+        "endLine": 289,
+        "endChar": 24
+      },
+      "revId": "eea780ea693407f1582789ee6379eab7a3e20bf3",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa3479d7_3b0fcbe3",
+        "filename": "arch/arm/configs/cyanogenmod_cherry_defconfig",
+        "patchSetId": 2
+      },
+      "lineNbr": 292,
+      "author": {
+        "id": 10258
+      },
+      "writtenOn": "2017-01-03T07:22:05Z",
+      "side": 0,
+      "message": "and this",
+      "range": {
+        "startLine": 292,
+        "startChar": 0,
+        "endLine": 292,
+        "endChar": 25
+      },
+      "revId": "eea780ea693407f1582789ee6379eab7a3e20bf3",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa3479d7_1b1407f4",
+        "filename": "arch/arm/configs/cyanogenmod_cherry_defconfig",
+        "patchSetId": 2
+      },
+      "lineNbr": 295,
+      "author": {
+        "id": 10258
+      },
+      "writtenOn": "2017-01-03T07:22:05Z",
+      "side": 0,
+      "message": "and this",
+      "range": {
+        "startLine": 294,
+        "startChar": 0,
+        "endLine": 295,
+        "endChar": 23
+      },
+      "revId": "eea780ea693407f1582789ee6379eab7a3e20bf3",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa3479d7_fbf823c6",
+        "filename": "arch/arm/configs/cyanogenmod_cherry_defconfig",
+        "patchSetId": 2
+      },
+      "lineNbr": 336,
+      "author": {
+        "id": 10258
+      },
+      "writtenOn": "2017-01-03T07:22:05Z",
+      "side": 0,
+      "message": "and this",
+      "range": {
+        "startLine": 336,
+        "startChar": 0,
+        "endLine": 336,
+        "endChar": 27
+      },
+      "revId": "eea780ea693407f1582789ee6379eab7a3e20bf3",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa3479d7_dbf55fcc",
+        "filename": "arch/arm/configs/cyanogenmod_cherry_defconfig",
+        "patchSetId": 2
+      },
+      "lineNbr": 338,
+      "author": {
+        "id": 10258
+      },
+      "writtenOn": "2017-01-03T07:22:05Z",
+      "side": 0,
+      "message": "and this",
+      "range": {
+        "startLine": 338,
+        "startChar": 0,
+        "endLine": 338,
+        "endChar": 34
+      },
+      "revId": "eea780ea693407f1582789ee6379eab7a3e20bf3",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    }
+  ]
+}

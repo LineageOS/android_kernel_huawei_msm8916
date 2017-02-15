@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2012-2016 The Linux Foundation. All rights reserved.
+ * Copyright (c) 2012-2015 The Linux Foundation. All rights reserved.
  *
  * Previously licensed under the ISC license by Qualcomm Atheros, Inc.
  *
@@ -96,8 +96,7 @@ VOS_STATUS btcOpen (tHalHandle hHal)
    pMac->btc.btcReady = VOS_FALSE;
    pMac->btc.btcEventState = 0;
    pMac->btc.btcHBActive = VOS_TRUE;
-   pMac->btc.btc_scan_compromise_esco = false;
-   pMac->btc.btc_scan_compromise_sco = false;
+   pMac->btc.btcScanCompromise = VOS_FALSE;
 
    for (i = 0; i < MWS_COEX_MAX_VICTIM_TABLE; i++)
    {
@@ -1989,21 +1988,13 @@ eHalStatus btcHandleCoexInd(tHalHandle hHal, void* pMsg)
      }
      else if (pSmeCoexInd->coexIndType == SIR_COEX_IND_TYPE_SCAN_COMPROMISED)
      {
-         smsLog(pMac, LOGW,
-            FL("Coex indication SIR_COEX_IND_TYPE_SCAN_COMPROMISED data[0] %d"),
-            pSmeCoexInd->coexIndData[0]);
-
-         /* coexIndData[0] will be 1 for SCO call and 0 for eSCO call */
-         if (pSmeCoexInd->coexIndData[0])
-            pMac->btc.btc_scan_compromise_sco = true;
-         else
-            pMac->btc.btc_scan_compromise_esco = true;
-
+         pMac->btc.btcScanCompromise = VOS_TRUE;
+         smsLog(pMac, LOGW, "Coex indication in %s(), type - SIR_COEX_IND_TYPE_SCAN_COMPROMISED",
+             __func__);
      }
      else if (pSmeCoexInd->coexIndType == SIR_COEX_IND_TYPE_SCAN_NOT_COMPROMISED)
      {
-         pMac->btc.btc_scan_compromise_esco = false;
-         pMac->btc.btc_scan_compromise_sco = false;
+         pMac->btc.btcScanCompromise = VOS_FALSE;
          smsLog(pMac, LOGW, "Coex indication in %s(), type - SIR_COEX_IND_TYPE_SCAN_NOT_COMPROMISED",
              __func__);
      }

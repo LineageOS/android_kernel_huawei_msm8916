@@ -28,7 +28,9 @@
 #include "mdss_panel.h"
 #include "mdss_dsi.h"
 #include "mdss_debug.h"
+#ifndef CONFIG_FB_MSM_MDSS_MDP3
 #include "mdss_livedisplay.h"
+#endif
 
 #define XO_CLK_RATE	19200000
 
@@ -760,8 +762,10 @@ static int mdss_dsi_unblank(struct mdss_panel_data *pdata)
 			enable_irq(gpio_to_irq(ctrl_pdata->disp_te_gpio));
 	}
 
+#ifndef CONFIG_FB_MSM_MDSS_MDP3
 	mdss_livedisplay_update(pdata->panel_info.livedisplay,
 			MODE_UPDATE_ALL);
+#endif
 
 error:
 	mdss_dsi_clk_ctrl(ctrl_pdata, DSI_ALL_CLKS, 0);

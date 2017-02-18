@@ -28,6 +28,33 @@ dtb-$(CONFIG_ARCH_MSM8974) += msm8974-v1-cdp.dtb \
 	msm8974pro-ac-pm8941-liquid.dtb \
 	msm8974pro-ac-pm8941-mtp.dtb \
 	msm8974pro-ac-pma8084-pm8941-mtp.dtb
+
+ifeq ($(CONFIG_MACH_HUAWEI_MSM8909),y)
+ifeq ($(CONFIG_MACH_SCALE),y)
+dtb-$(CONFIG_ARCH_MSM8909) += 	msm8909-qrd-scl-al00_vc.dtb \
+	msm8909-qrd-scl-tl_vb.dtb \
+	msm8909-qrd-scl-l01_va.dtb \
+	msm8909-qrd-scl-l21_vb.dtb \
+	msm8909-qrd-scl-l21_va.dtb \
+	msm8909-qrd-scl-u21_va.dtb \
+	msm8909-qrd-scl-l03_vb.dtb \
+	msm8909-qrd-scl-l03_va.dtb \
+	msm8909-qrd-scl-l04_va.dtb \
+	msm8909-qrd-scl-al_va.dtb \
+	msm8909-qrd-scl-u23_va.dtb \
+	msm8909-qrd-scl-u03_va.dtb \
+	msm8909-qrd-scl-tl10_vb.dtb \
+	msm8909-qrd-scl-l02_va.dtb \
+	msm8909-qrd-scl-l02_vb.dtb \
+	msm8909-qrd-scl-l01_vb.dtb \
+	msm8909-qrd-scl-tl_va.dtb \
+	msm8909-qrd-scl-cl_vc.dtb \
+	msm8909-qrd-scl-cl_va.dtb \
+	msm8909-qrd-scl-u21_vb.dtb \
+	msm8909-qrd-scl-u31_va.dtb \
+	msm8909-qrd-scl-al00_va.dtb
+endif
+else
 dtb-$(CONFIG_ARCH_MSM8909) += msm8909-sim.dtb \
 	msm8909-rumi.dtb \
 	msm8909-qrd-skua.dtb \
@@ -77,6 +104,7 @@ dtb-$(CONFIG_ARCH_MSM8909) += msm8909-sim.dtb \
 	msm8909-512mb-mtp-wcd9326-refboard.dtb \
 	apq8009-mtp-wcd9326-refboard.dtb \
 	apq8009-512mb-mtp-wcd9326-refboard.dtb
+endif
 
 ifeq ($(CONFIG_MACH_CKT_MSM8939),y)
 dtb-$(CONFIG_ARCH_MSM8916) += msm8939-spirit.dtb

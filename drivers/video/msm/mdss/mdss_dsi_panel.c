@@ -23,7 +23,9 @@
 #include <linux/err.h>
 
 #include "mdss_dsi.h"
+#ifndef CONFIG_FB_MSM_MDSS_MDP3
 #include "mdss_livedisplay.h"
+#endif
 
 #define DT_CMD_HDR 6
 
@@ -2067,7 +2069,9 @@ static int mdss_panel_parse_dt(struct device_node *np,
 
 	mdss_dsi_parse_dfps_config(np, ctrl_pdata);
 
+#ifndef CONFIG_FB_MSM_MDSS_MDP3
 	mdss_livedisplay_parse_dt(np, pinfo);
+#endif
 
 	return 0;
 

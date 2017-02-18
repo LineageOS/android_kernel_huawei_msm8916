@@ -9,6 +9,8 @@ obj-y += broadcast/
 obj-$(CONFIG_DVB_MPQ) += dvb/
 ifeq ($(CONFIG_HUAWEI_KK_CAMERA),y)
 obj-$(CONFIG_MSMB_CAMERA) += camera_v2_cherry/
+else ifeq ($(CONFIG_HUAWEI_L_CAMERA),y)
+obj-$(CONFIG_MSMB_CAMERA) += camera_v2_scale/
 else
 obj-$(CONFIG_MSMB_CAMERA) += camera_v2/
 endif

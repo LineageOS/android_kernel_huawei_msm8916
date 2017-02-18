@@ -13,6 +13,13 @@ config MACH_HUAWEI_MSM8916
 	help
 	  Support for MSM8916 Huawei variants
 
+config MACH_HUAWEI_MSM8909
+	bool "HUAWEI MSM8909"
+	depends on ARCH_MSM8909
+	select MACH_HUAWEI
+	help
+	  Support for MSM8909 Huawei variants
+
 menu "Huawei board selection"
 
 config MACH_C8817D
@@ -62,5 +69,11 @@ config MACH_CHE1_L04
 	select MACH_HUAWEI_MSM8916
 	help
 	  Support for Huawei CHE1_L04 variant
+
+config MACH_SCALE
+	bool "SCALE board"
+	select MACH_HUAWEI_MSM8909
+	help
+	  Support for Huawei SCALE variant
 
 endmenu

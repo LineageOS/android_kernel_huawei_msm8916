@@ -19,7 +19,6 @@
 #include <mach/rpm-regulator.h>
 #include <linux/regulator/rpm-smd-regulator.h>
 #include <linux/regulator/consumer.h>
-#include <linux/pm_qos.h>
 
 #include "sensor_otp_common_if.h"
 
@@ -32,8 +31,6 @@
 #endif
 
 #define MSM_SENSOR_BUFFER_SIZE 1024
-
-static struct pm_qos_request msm_sensor_qos_request;
 
 static void msm_sensor_adjust_mclk(struct msm_camera_power_ctrl_t *ctrl)
 {
@@ -468,7 +465,6 @@ int msm_sensor_power_down(struct msm_sensor_ctrl_t *s_ctrl)
 			__func__, __LINE__, power_info, sensor_i2c_client);
 		return -EINVAL;
 	}
-	pm_qos_remove_request(&msm_sensor_qos_request);
 	return msm_camera_power_down(power_info, sensor_device_type,
 		sensor_i2c_client);
 }
@@ -528,7 +524,6 @@ int msm_sensor_power_up(struct msm_sensor_ctrl_t *s_ctrl)
 			break;
 		}
 	}
-	pm_qos_add_request(&msm_sensor_qos_request, PM_QOS_CPU_DMA_LATENCY, 1);
 
 	return rc;
 }
